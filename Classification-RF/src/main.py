@@ -32,8 +32,6 @@ test_df = cd.cleaning_columns(test_df)
 # Drop columns
 train_df = cd.drop_columns(train_df)
 test_df = cd.drop_columns(test_df)
-train_df.to_csv('Train_d.csv')
-test_df.to_csv('test.csv')
 print(train_df.head())
 
 # Train the models
