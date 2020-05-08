@@ -35,9 +35,16 @@ test_df = cd.drop_columns(test_df)
 print(train_df.head())
 
 # Train the models
+'''
+0 - Naive Bayes
+1 - Random Forest
+2 - SVM 
+3 - Linear SVC
+4 - KNN
+'''
 model = rf.ml_model()
-metrics_values = rf.training(train_df, test_df, yTest, model)
-evaluation = rf.evaluation_metrics(metrics_values[0], metrics_values[1], metrics_values[2])
+metrics_values = rf.training(train_df, test_df, yTest, model[4])
+evaluation = rf.evaluation_metrics(metrics_values[0], metrics_values[1])
 
 
 
