@@ -35,7 +35,8 @@ test_df = cd.drop_columns(test_df)
 print(train_df.head())
 
 # Train the models
-metrics_values = rf.training(train_df, test_df, yTest)
+model = rf.ml_model()
+metrics_values = rf.training(train_df, test_df, yTest, model)
 evaluation = rf.evaluation_metrics(metrics_values[0], metrics_values[1], metrics_values[2])
 
 

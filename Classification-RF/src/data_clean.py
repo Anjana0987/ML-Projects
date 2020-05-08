@@ -29,16 +29,6 @@ class CleaningData:
         return df
 
     def drop_columns(self, df):
-        # Drop the PassengerID column
-        del df['PassengerId']
-        # Drop the Name column
-        del df['Name']
-        # Drop the Age column
-        del df['Age']
-        # Drop the ticked column
-        del df['Ticket']
-        # Drop the Fare column
-        del df['Fare']
-        # Drop the Cabin column
-        del df['Cabin']
+        # Drop the unnecessary columns
+        df.drop(['PassengerId', 'Name', 'Age', 'Ticket', 'Fare', 'Cabin'], axis=1, inplace=True)
         return df

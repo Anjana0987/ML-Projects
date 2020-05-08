@@ -4,7 +4,14 @@ from sklearn import metrics
 
 class RandomForestModel:
 
-    def training(self, train_df, test_df, yTest):
+    def ml_model(self):
+        # Random Forest Classifier
+        model = RandomForestClassifier(n_estimators=50, 
+                               bootstrap = True,
+                               max_features = 'sqrt', random_state=21)
+        return model
+
+    def training(self, train_df, test_df, yTest, model):
         # There is two NaN values which we are dropping
         train_df.dropna(inplace= True)
         test_df.dropna(inplace= True)
@@ -14,11 +21,7 @@ class RandomForestModel:
         xTest = test_df
         yTest = yTest.iloc[:, 1]
 
-        # Random Forest Classifier
-        model = RandomForestClassifier(n_estimators=50, 
-                               bootstrap = True,
-                               max_features = 'sqrt', random_state=21)
-
+        # Train the model
         model.fit(xTrain, yTrain)
         y_predict = model.predict(xTest)
         y_pred_prob = model.predict_proba(xTest)[:,1]
