@@ -14,7 +14,7 @@ class WordDictionary:
         text_list = list(text_series)
         text_doc2w = []
         dictionary = corpora.Dictionary(text_list)
-        #dictionary.save_as_text('data/output/consolidated_data/corpus_dict.txt')
+        dictionary.save_as_text('Data/output/corpus_dict.txt')
         for i in text_series:
             text_doc2w.append(dictionary.doc2bow(i))
         return text_doc2w

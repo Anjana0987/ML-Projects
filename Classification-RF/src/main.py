@@ -43,7 +43,7 @@ print(train_df.head())
 4 - KNN
 '''
 model = rf.ml_model()
-metrics_values = rf.training(train_df, test_df, yTest, model[4])
+metrics_values = rf.training(train_df, test_df, yTest, model[0])
 evaluation = rf.evaluation_metrics(metrics_values[0], metrics_values[1])
 
 
